@@ -2,12 +2,12 @@
 
 ## Build 
 
-```go
+```bash
 go build main.go
 ```
 
 ## Run Test
 
-```go
+```bash
 go test
 ```
