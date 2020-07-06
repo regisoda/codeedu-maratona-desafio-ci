@@ -2,12 +2,12 @@
 
 ## Build 
 
-```
-` go build main.go
+```go
+go build main.go
 ```
 
 ## Run Test
 
-```
-` go test
+```go
+go test
 ```
