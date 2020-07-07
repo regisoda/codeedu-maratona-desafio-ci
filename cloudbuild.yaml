@@ -9,5 +9,5 @@ steps:
   env: ['PROJECT_ROOT=github.com/regisoda/codeedu-maratona-desafio-ci']
 - id: "docker build"
   name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '--tag=gcr.io/$PROJECT_ID/go-desafio-ci', '-f ./Dockerfile.cloudbuild', '.']
+  args: ['build', '--tag=gcr.io/$PROJECT_ID/go-desafio-ci', '-f ./Dockerfile.cloudbuild']
 images: ['gcr.io/$PROJECT_ID/go-desafio-ci']
