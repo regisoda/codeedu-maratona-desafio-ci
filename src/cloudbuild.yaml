@@ -1,0 +1,10 @@
+steps:
+- name: 'gcr.io/cloud-builders/go'
+  args: ['install', '.']
+  env: ['PROJECT_ROOT=src']
+- name: 'gcr.io/cloud-builders/go'
+  args: ['test', 'src']
+  env: ['PROJECT_ROOT=src']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '--tag=gcr.io/$PROJECT_ID/go-desafio-ci', '.']
+images: ['gcr.io/$PROJECT_ID/go-desafio-ci']
