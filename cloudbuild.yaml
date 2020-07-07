@@ -1,10 +1,13 @@
 steps:
-- name: 'gcr.io/cloud-builders/go'
+- id: "go install"
+  name: 'gcr.io/cloud-builders/go'
   args: ['install', './src']
   env: ['PROJECT_ROOT=github.com/regisoda/codeedu-maratona-desafio-ci']
-- name: 'gcr.io/cloud-builders/go'
+- id: "go test"
+  name: 'gcr.io/cloud-builders/go'
   args: ['test', './src']
   env: ['PROJECT_ROOT=github.com/regisoda/codeedu-maratona-desafio-ci']
-# - name: 'gcr.io/cloud-builders/docker'
-#   args: ['build', '--tag=gcr.io/$PROJECT_ID/go-desafio-ci', '.']
-# images: ['gcr.io/$PROJECT_ID/go-desafio-ci']
+- id: "docker build"
+  name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '--tag=gcr.io/$PROJECT_ID/go-desafio-ci', '.']
+images: ['gcr.io/$PROJECT_ID/go-desafio-ci']
